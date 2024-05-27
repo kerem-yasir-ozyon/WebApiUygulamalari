@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using WebApiUygulamalari.Data.Context;
+
 namespace WebApiUygulamalari
 {
     public class Program
@@ -8,6 +11,8 @@ namespace WebApiUygulamalari
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddDbContext<ArabaDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Baglanti")));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
