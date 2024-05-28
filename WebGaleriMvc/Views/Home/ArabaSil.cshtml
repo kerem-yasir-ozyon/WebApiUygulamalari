@@ -1,0 +1,23 @@
+﻿@using WebGaleriMvc.Data
+@model Araba
+
+<div class="alert alert-danger" role="alert">
+    Arabayı silmek istediğinize emin misiniz?
+</div>
+
+<div class="container" style="margin-top: 25px;">
+    <h2>Arabayı Sil</h2>
+    <h3>@Model.Marka</h3>
+    <h3>@Model.Renk</h3>
+</div>
+
+<div class="form-control">
+  
+
+    <form asp-action="ArabaSil" method="post">
+
+        <input class="btn btn-danger" type="submit" value="Sil" />
+
+    </form>
+
+</div>

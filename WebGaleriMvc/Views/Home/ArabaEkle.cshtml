@@ -1,0 +1,20 @@
+﻿@using WebGaleriMvc.Data
+@model Araba
+
+<div class="form-control">
+    <form asp-action="ArabaEkle" method="post">
+
+        <label asp-for="Id" class="form-control"></label>
+
+        <label asp-for="Marka" ></label>
+        <input asp-for="Marka" class="form-control" />
+
+        <label asp-for="Renk" ></label>
+        <input asp-for="Renk" class="form-control" />
+
+
+        <input class="btn btn-primary" type="submit" value="Ekle" />
+
+    </form>
+
+</div>
