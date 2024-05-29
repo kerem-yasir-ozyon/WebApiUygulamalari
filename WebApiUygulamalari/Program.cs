@@ -15,6 +15,14 @@ namespace WebApiUygulamalari
             builder.Services.AddDbContext<ArabaDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Baglanti")));
 
             builder.Services.AddControllers();
+
+            builder.Services.AddCors(options => options.AddDefaultPolicy(p => 
+            p.AllowAnyHeader().
+            AllowAnyMethod().
+            AllowAnyOrigin()
+
+            ));
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -34,6 +42,8 @@ namespace WebApiUygulamalari
 
 
             app.MapControllers();
+
+            app.UseCors();
 
             app.Run();
         }
