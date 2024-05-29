@@ -58,7 +58,22 @@ namespace WebGaleriMvc.Controllers
             return RedirectToAction("Index");
         }
 
-        
+        [HttpGet]
+        public async Task<IActionResult> ArabaGuncelle(int id)
+        {
+            var guncellenecekAraba = await _httpClient.GetFromJsonAsync<Araba>("https://localhost:7234/api/Araba/IdYeGoreGetir?id=" + id);
+            return View(guncellenecekAraba);
+        }
+
+        [HttpPost, ActionName("ArabaGuncelle")]
+        public async Task<IActionResult> ArabaGuncelleConfirmed(Araba araba,int id)
+        {
+            await _httpClient.PutAsJsonAsync("https://localhost:7234/api/Araba/ArabaGuncelle?id=" + id,araba );
+
+            return RedirectToAction("Index");
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

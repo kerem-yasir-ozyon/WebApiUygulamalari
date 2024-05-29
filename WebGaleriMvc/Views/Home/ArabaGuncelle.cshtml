@@ -1,0 +1,27 @@
+﻿@using WebGaleriMvc.Data
+
+@model Araba
+
+
+<div class="border-success">
+
+    <form asp-action="ArabaGuncelle" method="post">
+
+        <div class="mb-3">
+            <label asp-for="Marka" class="form-label">Marka</label>
+            <input asp-for="Marka" class="form-control" placeholder="Marka">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Renk" class="form-label">Renk</label>
+            <input asp-for="Renk" class="form-control" placeholder="Renk">
+        </div>
+
+        <div class="mb-3">
+            <input class="btn btn-outline-primary" type="submit" value="Guncelle" />
+        </div>
+
+
+    </form>
+
+
+</div>
