@@ -27,7 +27,7 @@ namespace WebApiUygulamalari.Controllers
         {
             _db.Arabalar.Add(araba);
             _db.SaveChanges();
-            return Created();
+            return Ok("Eklenmiştir.");
         }
 
         [HttpDelete("ArabaSil")]
