@@ -1,0 +1,58 @@
+﻿<h1>AJAX TABLO CRUD </h1>
+
+
+<table id="tblTablolar" class="table table-success">
+    <thead>
+        <tr>
+            <td>
+                Id
+            </td>
+            <td>
+                Ressam
+            </td>
+            <td>
+                Yapılma Tarihi
+            </td>
+            <td>
+                Crud
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+
+</table>
+
+<p>
+    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#ekleme" aria-expanded="false" aria-controls="collapseWidthExample">
+        Ekleme Bölümü
+    </button>
+</p>
+<div style="min-height: 120px;">
+    <div class="collapse collapse-horizontal" id="ekleme">
+        <div class="card card-body" style="width: 300px;">
+
+
+
+            <div class="mb-3">
+                <label for="Ressam" class="form-label">Ressam</label>
+                <input class="form-control" id="txtRessam">
+
+            </div>
+            <div class="mb-3">
+                <label for="YapilmaTarihi" class="form-label">YapilmaTarihi</label>
+                <input type="date" class="form-control" id="txtYapilmaTarihi">
+            </div>
+
+            <button onclick="Ekle()" type="submit" class="btn btn-success">Ekle</button>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js">  </script>
+<script type="text/javascript" src="~/js/site.js"></script>
