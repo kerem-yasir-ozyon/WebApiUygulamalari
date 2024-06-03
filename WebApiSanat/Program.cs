@@ -12,6 +12,7 @@ namespace WebApiSanat
 
             // Add services to the container.
 
+            //Baglantýýýýý
             builder.Services.AddDbContext<SanatDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Baglanti")));
 
             builder.Services.AddControllers();
